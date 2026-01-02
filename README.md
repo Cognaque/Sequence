@@ -59,7 +59,7 @@ A privacy-focused, offline-first productivity tool designed for the ADHD brain. 
 
 - **Impact & Momentum Scoring** - Tasks are ranked not just by date, but by an `Impact Score` (consequence severity) and `Momentum Score` (bang-for-your-buck).
 
-- **Task Aging - Tracks the lifespan of every task (e.g., "4d Old") and slowly escalates their Impact Score day-by-day so forgotten tasks eventually surface.** 
+- **Task Aging** - Tracks the lifespan of every task (e.g., "4d Old") and slowly escalates their Impact Score day-by-day so forgotten tasks eventually surface. 
 
 - **Eisenhower Sorting** - Automatically categorizes tasks into Priority, Schedule, Delegate, or Later based on calculated urgency/importance.
     
