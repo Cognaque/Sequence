@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      Changed parent to android:Theme.Material.NoActionBar:
+      1. 'Material' (without Light) sets the base to Dark mode.
+      2. 'NoActionBar' removes the top purple bar.
+    -->
+    <style name="Theme.Sequence" parent="android:Theme.Material.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="android:colorPrimary">#6200EE</item>
+        <item name="android:colorPrimaryDark">#3700B3</item>
+        <item name="android:colorAccent">#03DAC6</item>
+
+        <!-- Explicitly set background to your preferred dark color -->
+        <item name="android:windowBackground">#0A0A0A</item>
+        <item name="android:statusBarColor">#0A0A0A</item>
+
+        <!-- Ensure default text color is readable on dark background -->
+        <item name="android:textColor">#FFFFFF</item>
+    </style>
+</resources>
