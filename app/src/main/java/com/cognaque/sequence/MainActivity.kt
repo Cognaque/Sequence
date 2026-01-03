@@ -173,8 +173,8 @@ fun Task.calculateQuadrant(): EisenhowerQuadrant {
     val avgImportance = (longTerm + accumulation) / 2f
 
     return when {
-        avgUrgency < 0.5f && avgImportance >= 0.5f -> EisenhowerQuadrant.SCHEDULE
-        avgUrgency >= 0.5f && avgImportance < 0.5f -> EisenhowerQuadrant.DELEGATE
+        avgImportance >= 0.5f -> EisenhowerQuadrant.SCHEDULE
+        avgUrgency >= 0.5f -> EisenhowerQuadrant.DELEGATE
         else -> EisenhowerQuadrant.LATER
     }
 }
@@ -241,7 +241,7 @@ interface LearningDao {
     @Query("DELETE FROM keyword_weights")
     suspend fun deleteAllWeights()
 
-    @Query("DELETE FROM keyword_weights WHERE keyword NOT IN (SELECT keyword FROM keyword_weights ORDER BY count DESC LIMIT :limit)")
+    @Query("DELETE FROM keyword_weights WHERE keyword NOT IN (SELECT keyword FROM keyword_weights ORDER BY count DESC, lastUpdated DESC LIMIT :limit)")
     suspend fun pruneExcessKeywords(limit: Int)
 }
 
