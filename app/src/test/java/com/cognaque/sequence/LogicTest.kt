@@ -1,8 +1,11 @@
 package com.cognaque.sequence
 
+import com.cognaque.sequence.data.EisenhowerQuadrant
+import com.cognaque.sequence.data.Task
+import com.cognaque.sequence.data.calculateImpactScore
+import com.cognaque.sequence.data.calculateQuadrant
 import org.junit.Test
 import org.junit.Assert.*
-import java.time.Instant
 import java.time.LocalDate
 import java.time.ZoneId
 
@@ -91,37 +94,13 @@ class LogicTest {
 
         // High urgency, Low importance -> Delegate
         val delegateTask = Task(
-            rawText = "Delegate",
-            immediate = 0.9f,
-            proximity = 0.9f, // Avg urgency = 0.9
-            longTerm = 0.1f,
-            accumulation = 0.1f, // Avg importance = 0.1
-            effort = 0.1f
-        )
-        // Impact check:
-        // 0.9*0.4 + 0.1*0.3 + 0.9*0.2 + 0.1*0.1 = 0.36 + 0.03 + 0.18 + 0.01 = 0.58 >= 0.5 -> Priority ???
-        // Wait, let's re-calculate.
-        // 0.36 + 0.03 + 0.18 + 0.01 = 0.58.
-        // 0.58 > 0.5, so it should be PRIORITY according to the code.
-
-        // Let's try to construct a DELEGATE case that doesn't trigger Priority.
-        // Needs Impact < 0.5.
-        // Impact = 0.4*Imm + 0.3*Lt + 0.2*Prox + 0.1*Acc
-        // AvgUrg >= 0.5 (Imm + Prox >= 1.0)
-        // AvgImp < 0.5 (Lt + Acc < 1.0)
-
-        // Try: Imm=0.6, Prox=0.4 (AvgUrg=0.5), Lt=0.1, Acc=0.1 (AvgImp=0.1)
-        // Impact = 0.6*0.4 + 0.1*0.3 + 0.4*0.2 + 0.1*0.1
-        //        = 0.24 + 0.03 + 0.08 + 0.01 = 0.36 < 0.5. Good.
-
-        val realDelegateTask = Task(
             rawText = "Real Delegate",
             immediate = 0.6f,
             proximity = 0.4f,
             longTerm = 0.1f,
             accumulation = 0.1f
         )
-        assertEquals(EisenhowerQuadrant.DELEGATE, realDelegateTask.calculateQuadrant())
+        assertEquals(EisenhowerQuadrant.DELEGATE, delegateTask.calculateQuadrant())
 
         // Low urgency, Low importance -> Later
         val laterTask = Task(
@@ -140,12 +119,6 @@ class LogicTest {
         // But Impact is low (Imm=0, Lt=0) -> Impact = 0.2 + 0.1 = 0.3 < 0.5.
         // AvgUrg = (0 + 1) / 2 = 0.5 (High)
         // AvgImp = (0 + 1) / 2 = 0.5 (High)
-        // Current logic:
-        // AvgUrg < 0.5? False.
-        // AvgUrg >= 0.5 && AvgImp < 0.5? False.
-        // Else -> LATER.
-        //
-        // Desired logic: Should be SCHEDULE (Q2) as a fallback for Q1 items that aren't quite "Impactful" enough.
 
         val confusingTask = Task(
             rawText = "Confusing",
@@ -155,7 +128,7 @@ class LogicTest {
             accumulation = 1.0f
         )
 
-        // This assertion documents the DESIRED behavior, not the current buggy behavior.
+        // Desired behavior with fix
         assertEquals(EisenhowerQuadrant.SCHEDULE, confusingTask.calculateQuadrant())
     }
 }

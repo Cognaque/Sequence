@@ -1,11 +1,12 @@
 package com.cognaque.sequence
 
+import com.cognaque.sequence.data.KeywordWeight
+import com.cognaque.sequence.data.LearningDao
+import com.cognaque.sequence.logic.LearningEngine
 import kotlinx.coroutines.runBlocking
 import org.junit.Assert.*
 import org.junit.Before
 import org.junit.Test
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.flowOf
 
 // Mock LearningDao manually since we can't use Mockito easily in this environment without setup
 class MockLearningDao : LearningDao {
@@ -46,10 +47,6 @@ class LearningEngineTest {
     @Test
     fun testLearnFromTask() = runBlocking {
         val text = "Pay bills"
-        // Tokens: "pay", "bills", "pay bills" (if length > 2)
-        // "pay" -> len 3
-        // "bills" -> len 5
-        // "pay bills" -> bigram
 
         learningEngine.learnFromTask(
             text = text,
@@ -90,9 +87,6 @@ class LearningEngineTest {
     fun testPredictLowConfidence() = runBlocking {
         // Teach it just once, total weight might be low
         learningEngine.learnFromTask("rare", 1.0f, 0.0f, 0.0f, 0.0f, 0.0f)
-
-        // "rare" count = 1. Total weight = 1 (relevance).
-        // Code says: if (totalWeight < 3) return ... false
 
         val prediction = learningEngine.predict("rare")
         assertFalse(prediction.confidence)
