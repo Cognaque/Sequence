@@ -1,3 +1,5 @@
+@file:OptIn(ExperimentalMaterial3Api::class)
+
 package com.cognaque.sequence.ui.components
 
 import androidx.compose.animation.core.animateFloatAsState
