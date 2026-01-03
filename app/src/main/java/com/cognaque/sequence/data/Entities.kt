@@ -56,7 +56,8 @@ fun Task.getAgeInDays(): Int {
 fun Task.calculateImpactScore(): Float {
     val ageFactor = (getAgeInDays() * 0.05f).coerceAtMost(0.5f)
     val dynamicProximity = (proximity + ageFactor).coerceAtMost(1.0f)
-    return ((immediate * 0.4f) + (longTerm * 0.3f) + (dynamicProximity * 0.2f) + (accumulation * 0.1f))
+    // Adjusted for Time Blindness: Prioritize LongTerm (0.4) and Proximity (0.3) over Immediate (0.2)
+    return ((longTerm * 0.4f) + (dynamicProximity * 0.3f) + (immediate * 0.2f) + (accumulation * 0.1f))
 }
 
 fun Task.calculateMomentumScore(): Float {
