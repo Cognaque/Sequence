@@ -5,6 +5,13 @@ plugins {
     alias(libs.plugins.google.devtools.ksp)
 }
 
+// KSP Configuration for Room to handle potential missing types during incremental builds
+ksp {
+    arg("room.schemaLocation", "$projectDir/schemas")
+    arg("room.incremental", "true")
+    arg("room.expandProjection", "true")
+}
+
 android {
     namespace = "com.cognaque.sequence"
     compileSdk = 34
@@ -19,14 +26,6 @@ android {
         testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
         vectorDrawables {
             useSupportLibrary = true
-        }
-
-        // KSP Configuration for Room to handle potential missing types during incremental builds
-        //noinspection WrongGradleMethod
-        ksp {
-            arg("room.schemaLocation", "$projectDir/schemas")
-            arg("room.incremental", "true")
-            arg("room.expandProjection", "true")
         }
     }
 
@@ -43,10 +42,6 @@ android {
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
-    }
-
-    kotlinOptions {
-        jvmTarget = "11"
     }
 
     buildFeatures {
@@ -87,10 +82,10 @@ android {
 
 // Ensure consistent JVM targets across all modules to prevent task graph errors
 tasks.withType<org.jetbrains.kotlin.gradle.tasks.KotlinCompile>().configureEach {
-    kotlinOptions {
-        jvmTarget = "11"
+    compilerOptions {
+        jvmTarget.set(org.jetbrains.kotlin.gradle.dsl.JvmTarget.JVM_11)
         // Added freeCompilerArgs to ensure better compatibility with newer Gradle versions
-        freeCompilerArgs = freeCompilerArgs + listOf("-Xjvm-default=all", "-Xcontext-receivers")
+        freeCompilerArgs.addAll(listOf("-Xjvm-default=all", "-Xcontext-receivers"))
     }
 }
 
