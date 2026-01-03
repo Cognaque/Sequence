@@ -36,10 +36,10 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
     var showNuke by remember { mutableStateOf(false) }
     var vaultTaskDetail by remember { mutableStateOf<Task?>(null) }
 
-    ModalBottomSheet(onDismissRequest = onDismiss, containerColor = AppColors.Surface) {
+    ModalBottomSheet(onDismissRequest = onDismiss, containerColor = MaterialTheme.colorScheme.surface) {
         LazyColumn(Modifier.padding(horizontal = 24.dp).fillMaxWidth()) {
             item {
-                Text(AppStrings.DAILY_CHORE_PROTOCOL, fontWeight = FontWeight.Black, fontSize = 12.sp, color = AppColors.Tertiary)
+                Text(AppStrings.DAILY_CHORE_PROTOCOL, fontWeight = FontWeight.Black, fontSize = 12.sp, color = MaterialTheme.colorScheme.tertiary)
                 Row(Modifier.fillMaxWidth().padding(vertical = 16.dp)) {
                     OutlinedTextField(value = newChore, onValueChange = { newChore = it }, modifier = Modifier.weight(1f), singleLine = true)
                     IconButton(onClick = { viewModel.addDailyChore(newChore); newChore = "" }) { Icon(Icons.Default.Add, null) }
@@ -47,14 +47,14 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
             }
             items(dailyTemplates) { chore ->
                 Row(Modifier.fillMaxWidth(), horizontalArrangement = Arrangement.SpaceBetween) {
-                    Text(chore.text, color = Color.White)
-                    IconButton(onClick = { viewModel.deleteDailyChore(chore) }) { Icon(Icons.Default.Delete, null, tint = AppColors.Error) }
+                    Text(chore.text, color = MaterialTheme.colorScheme.onSurface)
+                    IconButton(onClick = { viewModel.deleteDailyChore(chore) }) { Icon(Icons.Default.Delete, null, tint = MaterialTheme.colorScheme.error) }
                 }
             }
             listOf(EisenhowerQuadrant.SCHEDULE, EisenhowerQuadrant.DELEGATE, EisenhowerQuadrant.LATER).forEach { quad ->
                 item {
                     Spacer(Modifier.height(16.dp))
-                    Text(quad.name, fontWeight = FontWeight.Bold, fontSize = 11.sp, color = AppColors.TextSecondary)
+                    Text(quad.name, fontWeight = FontWeight.Bold, fontSize = 11.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     Spacer(Modifier.height(8.dp))
                 }
                 val tasks = secondaryTasks[quad] ?: emptyList()
@@ -69,11 +69,11 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
                             }
                         })
                         SwipeToDismissBox(state = dismissState, backgroundContent = { VaultSwipeBackground(dismissState) }) {
-                            Surface(color = AppColors.Surface, modifier = Modifier.fillMaxWidth()) {
+                            Surface(color = MaterialTheme.colorScheme.surface, modifier = Modifier.fillMaxWidth()) {
                                 Row(Modifier.fillMaxWidth().clickable { vaultTaskDetail = task }.padding(vertical = 12.dp), verticalAlignment = Alignment.CenterVertically) {
-                                    Box(Modifier.size(6.dp).background(AppColors.Secondary, CircleShape))
+                                    Box(Modifier.size(6.dp).background(MaterialTheme.colorScheme.secondary, CircleShape))
                                     Spacer(Modifier.width(12.dp))
-                                    Text(task.rawText, color = AppColors.TextPrimary, modifier = Modifier.weight(1f))
+                                    Text(task.rawText, color = MaterialTheme.colorScheme.onSurface, modifier = Modifier.weight(1f))
                                 }
                             }
                         }
@@ -82,27 +82,27 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
             }
             item {
                 Spacer(Modifier.height(24.dp))
-                Text("SETTINGS", fontWeight = FontWeight.Black, fontSize = 12.sp, color = Color.Gray)
+                Text("SETTINGS", fontWeight = FontWeight.Black, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Row(Modifier.fillMaxWidth().padding(vertical = 16.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
                     Column {
-                        Text("Bed Time", fontWeight = FontWeight.Bold, color = AppColors.TextPrimary)
-                        Text("Hide hard tasks after ${windDown}:00", fontSize = 12.sp, color = AppColors.TextSecondary)
+                        Text("Bed Time", fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.onSurface)
+                        Text("Hide hard tasks after ${windDown}:00", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                     }
                     Row(verticalAlignment = Alignment.CenterVertically) {
-                        IconButton(onClick = { viewModel.setWindDownHour(windDown - 1) }) { Text("-", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = AppColors.Primary) }
-                        Text("$windDown:00", fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp), color = AppColors.TextPrimary)
-                        IconButton(onClick = { viewModel.setWindDownHour(windDown + 1) }) { Text("+", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = AppColors.Primary) }
+                        IconButton(onClick = { viewModel.setWindDownHour(windDown - 1) }) { Text("-", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary) }
+                        Text("$windDown:00", fontWeight = FontWeight.Bold, modifier = Modifier.padding(horizontal = 8.dp), color = MaterialTheme.colorScheme.onSurface)
+                        IconButton(onClick = { viewModel.setWindDownHour(windDown + 1) }) { Text("+", fontSize = 24.sp, fontWeight = FontWeight.Bold, color = MaterialTheme.colorScheme.primary) }
                     }
                 }
             }
             item {
                 Spacer(Modifier.height(24.dp))
-                Text(AppStrings.DATA_SOVEREIGNTY, fontWeight = FontWeight.Black, fontSize = 12.sp, color = Color.Gray)
+                Text(AppStrings.DATA_SOVEREIGNTY, fontWeight = FontWeight.Black, fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Row(Modifier.fillMaxWidth().padding(vertical = 16.dp), horizontalArrangement = Arrangement.spacedBy(8.dp)) {
                     OutlinedButton(onClick = { viewModel.generateExport() }, Modifier.weight(1f)) { Text("Export") }
                     OutlinedButton(onClick = { clipboard.getText()?.text?.let { viewModel.importData(it) } }, Modifier.weight(1f)) { Text("Import") }
                 }
-                Button(onClick = { showNuke = true }, colors = ButtonDefaults.buttonColors(containerColor = AppColors.Error), modifier = Modifier.fillMaxWidth()) { Text("DELETE DATA") }
+                Button(onClick = { showNuke = true }, colors = ButtonDefaults.buttonColors(containerColor = MaterialTheme.colorScheme.error), modifier = Modifier.fillMaxWidth()) { Text("DELETE DATA") }
             }
             item { Spacer(Modifier.height(48.dp)) }
         }
@@ -116,7 +116,7 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun VaultSwipeBackground(dismissState: SwipeToDismissBoxState) {
-    val color = if (dismissState.dismissDirection == SwipeToDismissBoxValue.StartToEnd) AppColors.Primary else AppColors.Error
+    val color = if (dismissState.dismissDirection == SwipeToDismissBoxValue.StartToEnd) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.error
     val alignment = if (dismissState.dismissDirection == SwipeToDismissBoxValue.StartToEnd) Alignment.CenterStart else Alignment.CenterEnd
     val icon = if (dismissState.dismissDirection == SwipeToDismissBoxValue.StartToEnd) Icons.Default.ArrowUpward else Icons.Default.Delete
     Box(Modifier.fillMaxSize().background(color).padding(horizontal = 24.dp), contentAlignment = alignment) { Icon(icon, null, tint = Color.White) }

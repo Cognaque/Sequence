@@ -34,6 +34,15 @@ class TaskViewModel(context: Context) : ViewModel() {
     private val _windDownHour = MutableStateFlow(prefs.getInt("wind_down_hour", 22))
     val windDownHour = _windDownHour.asStateFlow()
 
+    private val _isDarkTheme = MutableStateFlow(prefs.getBoolean("is_dark_theme", true))
+    val isDarkTheme = _isDarkTheme.asStateFlow()
+
+    fun toggleTheme() {
+        val newSetting = !_isDarkTheme.value
+        _isDarkTheme.value = newSetting
+        prefs.edit().putBoolean("is_dark_theme", newSetting).apply()
+    }
+
     private val _displayTasks = MutableStateFlow<List<TaskDisplayItem>>(emptyList())
     val displayTasks = _displayTasks.asStateFlow()
 
