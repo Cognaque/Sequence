@@ -76,7 +76,7 @@ fun MainScreen(viewModel: TaskViewModel) {
         snackbarHost = { SnackbarHost(snackbarHostState) },
         topBar = { AppHeader(viewModel, onTriggerReeval = { showManualReeval = it }) },
         bottomBar = { if (activeClarification == null) TaskInput(viewModel::onAddTask, isLoading) },
-        containerColor = AppColors.Background
+        containerColor = MaterialTheme.colorScheme.background
     ) { padding ->
         Box(Modifier.padding(padding).fillMaxSize()) {
             LazyColumn(
@@ -186,12 +186,12 @@ fun MainScreen(viewModel: TaskViewModel) {
 fun TaskRow(task: Task, indent: Dp, onClick: () -> Unit, dragModifier: Modifier = Modifier) {
     val impact = task.calculateImpactScore()
     val gradient = when {
-        task.isDailyChore -> listOf(AppColors.Tertiary, AppColors.Tertiary)
+        task.isDailyChore -> listOf(MaterialTheme.colorScheme.tertiary, MaterialTheme.colorScheme.tertiary)
         task.isManuallyPromoted -> listOf(Color(0xFF424242), Color(0xFF616161))
         task.calculateMomentumScore() >= 1.2f -> listOf(Color(0xFF7F0000), Color(0xFFB71C1C))
         impact >= 0.85f -> listOf(Color(0xFFF57C00), Color(0xFFE65100))
         impact >= 0.6f -> listOf(Color(0xFFFF9800), Color(0xFFFFB74D))
-        else -> listOf(Color(0xFF81C784), Color(0xFF66BB6A))
+        else -> listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.primary.copy(alpha = 0.7f))
     }
 
     Row(Modifier.fillMaxWidth().padding(start = indent).then(dragModifier), verticalAlignment = Alignment.CenterVertically) {
@@ -208,7 +208,7 @@ fun TaskRow(task: Task, indent: Dp, onClick: () -> Unit, dragModifier: Modifier 
                     Text(
                         task.rawText,
                         fontWeight = FontWeight.Bold,
-                        color = if (task.isDailyChore) Color.Black else Color.White
+                        color = Color.White // Keep white on gradient backgrounds
                     )
                     Row(verticalAlignment = Alignment.CenterVertically) {
                         if (task.isDailyChore) {
@@ -233,6 +233,7 @@ fun TaskRow(task: Task, indent: Dp, onClick: () -> Unit, dragModifier: Modifier 
 @Composable
 fun AppHeader(viewModel: TaskViewModel, onTriggerReeval: (Task) -> Unit) {
     val windDown by viewModel.windDownHour.collectAsState()
+    val isDark by viewModel.isDarkTheme.collectAsState()
     val isSleep = remember(windDown) {
         val h = LocalTime.now().hour
         if (windDown > 4) (h >= windDown || h < 4) else (h >= windDown && h < 4)
@@ -240,9 +241,18 @@ fun AppHeader(viewModel: TaskViewModel, onTriggerReeval: (Task) -> Unit) {
     var showVault by remember { mutableStateOf(false) }
 
     Column(Modifier.statusBarsPadding().fillMaxWidth()) {
-        if (isSleep) Box(Modifier.fillMaxWidth().background(AppColors.SurfaceVariant.copy(0.5f)).padding(top = 8.dp), contentAlignment = Alignment.Center) { Text(AppStrings.SLEEP_MODE, fontSize = 12.sp, color = AppColors.Secondary) }
-        Row(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 20.dp), horizontalArrangement = Arrangement.Center) {
-            Text(AppStrings.PRIORITY_TITLE, style = TextStyle(fontWeight = FontWeight.Black, fontSize = 18.sp, letterSpacing = 2.sp, color = AppColors.Primary), modifier = Modifier.pointerInput(Unit) { detectTapGestures(onLongPress = { showVault = true }) })
+        if (isSleep) Box(Modifier.fillMaxWidth().background(MaterialTheme.colorScheme.surfaceVariant.copy(0.5f)).padding(top = 8.dp), contentAlignment = Alignment.Center) { Text(AppStrings.SLEEP_MODE, fontSize = 12.sp, color = MaterialTheme.colorScheme.secondary) }
+        Row(Modifier.fillMaxWidth().padding(horizontal = 24.dp, vertical = 20.dp), horizontalArrangement = Arrangement.SpaceBetween, verticalAlignment = Alignment.CenterVertically) {
+            // Spacer to balance the layout if needed, or just alignment
+            Box(Modifier.size(48.dp)) // Placeholder for balance
+            Text(AppStrings.PRIORITY_TITLE, style = TextStyle(fontWeight = FontWeight.Black, fontSize = 18.sp, letterSpacing = 2.sp, color = MaterialTheme.colorScheme.primary), modifier = Modifier.pointerInput(Unit) { detectTapGestures(onLongPress = { showVault = true }) })
+            IconButton(onClick = { viewModel.toggleTheme() }) {
+                Icon(
+                    imageVector = if (isDark) Icons.Default.WbSunny else Icons.Default.DarkMode,
+                    contentDescription = "Toggle Theme",
+                    tint = MaterialTheme.colorScheme.onBackground
+                )
+            }
         }
     }
     if (showVault) VaultSheet({ showVault = false }, viewModel, onTriggerReeval)
@@ -253,22 +263,22 @@ fun TaskInput(onAdd: (String) -> Unit, isLoading: Boolean) {
     var text by remember { mutableStateOf("") }
     val focusRequester = remember { FocusRequester() }
 
-    Surface(color = AppColors.SurfaceVariant, shape = RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp)) {
+    Surface(color = MaterialTheme.colorScheme.surfaceVariant, shape = RoundedCornerShape(topStart = 28.dp, topEnd = 28.dp)) {
         Row(Modifier.padding(20.dp).windowInsetsPadding(WindowInsets.safeDrawing.only(WindowInsetsSides.Bottom)), verticalAlignment = Alignment.CenterVertically) {
-            Box(Modifier.weight(1f).background(Color.White.copy(0.05f), RoundedCornerShape(24.dp)).clickable { focusRequester.requestFocus() }.padding(16.dp, 12.dp)) {
+            Box(Modifier.weight(1f).background(MaterialTheme.colorScheme.onSurface.copy(0.05f), RoundedCornerShape(24.dp)).clickable { focusRequester.requestFocus() }.padding(16.dp, 12.dp)) {
                 BasicTextField(
                     value = text,
                     onValueChange = { if (it.length <= AppConstants.MAX_INPUT_LENGTH) text = it },
-                    textStyle = TextStyle(color = Color.White, fontSize = 16.sp),
+                    textStyle = TextStyle(color = MaterialTheme.colorScheme.onSurface, fontSize = 16.sp),
                     keyboardOptions = KeyboardOptions(imeAction = ImeAction.Send),
                     keyboardActions = KeyboardActions(onSend = { onAdd(text); text = "" }),
                     modifier = Modifier.focusRequester(focusRequester).fillMaxWidth()
                 )
-                if (text.isEmpty()) Text(AppStrings.DUMP_PLACEHOLDER, color = Color.Gray)
+                if (text.isEmpty()) Text(AppStrings.DUMP_PLACEHOLDER, color = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.6f))
             }
             Spacer(Modifier.width(12.dp))
             if (isLoading) CircularProgressIndicator(Modifier.size(24.dp))
-            else IconButton(onClick = { onAdd(text); text = "" }) { Icon(Icons.Default.Send, null, tint = AppColors.Primary) }
+            else IconButton(onClick = { onAdd(text); text = "" }) { Icon(Icons.Default.Send, null, tint = MaterialTheme.colorScheme.primary) }
         }
     }
 }
@@ -277,7 +287,7 @@ fun TaskInput(onAdd: (String) -> Unit, isLoading: Boolean) {
 @Composable
 fun PrioritySwipeBackground(dismissState: SwipeToDismissBoxState) {
     val direction = dismissState.dismissDirection
-    val color = if (direction == SwipeToDismissBoxValue.StartToEnd) AppColors.Primary else AppColors.AddAction
+    val color = if (direction == SwipeToDismissBoxValue.StartToEnd) MaterialTheme.colorScheme.primary else MaterialTheme.colorScheme.tertiaryContainer
     val alignment = if (direction == SwipeToDismissBoxValue.StartToEnd) Alignment.CenterStart else Alignment.CenterEnd
     val icon = if (direction == SwipeToDismissBoxValue.StartToEnd) Icons.Default.Check else Icons.Default.Add
     Box(Modifier.fillMaxSize().background(color, RoundedCornerShape(16.dp)).padding(horizontal = 24.dp), contentAlignment = alignment) {
@@ -285,19 +295,60 @@ fun PrioritySwipeBackground(dismissState: SwipeToDismissBoxState) {
     }
 }
 
-@Composable fun HeaderTitle(text: String, isHidden: Boolean) { Text(text, color = if (isHidden) AppColors.Secondary else AppColors.TextSecondary, fontSize = 11.sp, fontWeight = FontWeight.Bold) }
+@Composable fun HeaderTitle(text: String, isHidden: Boolean) { Text(text, color = if (isHidden) MaterialTheme.colorScheme.secondary else MaterialTheme.colorScheme.onSurfaceVariant, fontSize = 11.sp, fontWeight = FontWeight.Bold) }
 @Composable
 fun EmptyState() {
     Column(
         modifier = Modifier.fillMaxWidth().padding(48.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Text("🧠", fontSize = 54.sp) // Semicolon is optional in Kotlin, usually removed
+        Text("🧠", fontSize = 54.sp)
 
         Text(
             text = AppStrings.NO_THREATS,
-            color = Color.Gray,
+            color = MaterialTheme.colorScheme.onSurfaceVariant,
             fontSize = 9.5.sp
         )
+    }
+}
+
+@Composable
+fun ClarificationOverlay(task: Task, onFinish: (Float, Float, Float, Float, Float) -> Unit) {
+    var step by remember { mutableIntStateOf(0) }
+    val vals = remember { mutableStateListOf(task.immediate, task.longTerm, task.proximity, task.accumulation, task.effort) }
+    val questions = listOf("Immediate: Consequences if ignored today?", "Long-term: Impact on future goals?", "Proximity: How close is the deadline?", "Accumulation: Does this get worse with time?", "Effort: Activation energy required?")
+    val options = if (step == 4) listOf("Trivial (2m)" to 0.1f, "Simple (15m)" to 0.3f, "Focus (1h)" to 0.6f, "Draining (4h+)" to 0.9f) else listOf("Minimal" to 0.1f, "Low" to 0.3f, "Significant" to 0.6f, "Severe" to 0.9f)
+
+    Box(Modifier.fillMaxSize().background(Color.Black.copy(0.8f)).padding(32.dp).clickable(enabled = false) {}, contentAlignment = Alignment.Center) {
+        Column(
+            horizontalAlignment = Alignment.CenterHorizontally,
+            modifier = Modifier
+                .background(MaterialTheme.colorScheme.surface, RoundedCornerShape(24.dp))
+                .border(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.5f), RoundedCornerShape(24.dp))
+                .padding(24.dp)
+        ) {
+            Text("TEACHING THE AI...", color = MaterialTheme.colorScheme.primary, fontSize = 10.sp, fontWeight = FontWeight.Bold)
+            Spacer(Modifier.height(4.dp))
+            Text(task.rawText, color = MaterialTheme.colorScheme.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+            Spacer(Modifier.height(16.dp))
+            Text(questions[step], color = MaterialTheme.colorScheme.onSurface, fontSize = 18.sp, fontWeight = FontWeight.Medium, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+            Spacer(Modifier.height(24.dp))
+            options.forEach { (label, value) ->
+                Button(
+                    onClick = {
+                        vals[step] = value
+                        if (step < 4) step++ else onFinish(vals[0], vals[1], vals[3], vals[2], vals[4])
+                    },
+                    modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
+                    shape = RoundedCornerShape(12.dp),
+                    colors = ButtonDefaults.buttonColors(
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        contentColor = MaterialTheme.colorScheme.primary
+                    )
+                ) {
+                    Text(label)
+                }
+            }
+        }
     }
 }

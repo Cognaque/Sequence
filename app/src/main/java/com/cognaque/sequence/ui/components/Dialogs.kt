@@ -22,7 +22,6 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.clickable
 import androidx.compose.foundation.shape.RoundedCornerShape
-import com.cognaque.sequence.data.AppColors
 import com.cognaque.sequence.data.AppConstants
 import com.cognaque.sequence.data.Task
 import com.cognaque.sequence.data.getAgeInDays
@@ -37,8 +36,8 @@ fun TaskDetailsDialog(task: Task, onDismiss: () -> Unit, onSaveNotes: (String) -
         title = { Text("Task Details") },
         text = {
             Column(Modifier.fillMaxWidth()) {
-                Text(task.rawText, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = AppColors.TextPrimary)
-                Text("Created ${task.getAgeInDays()} days ago", fontSize = 12.sp, color = Color.Gray)
+                Text(task.rawText, fontWeight = FontWeight.Bold, fontSize = 18.sp, color = MaterialTheme.colorScheme.onSurface)
+                Text("Created ${task.getAgeInDays()} days ago", fontSize = 12.sp, color = MaterialTheme.colorScheme.onSurfaceVariant)
                 Spacer(Modifier.height(16.dp))
                 OutlinedTextField(
                     value = notes,
@@ -50,7 +49,7 @@ fun TaskDetailsDialog(task: Task, onDismiss: () -> Unit, onSaveNotes: (String) -
         },
         confirmButton = {
             Row {
-                TextButton(onClick = onReevaluate) { Text("Re-evaluate", color = AppColors.Tertiary) }
+                TextButton(onClick = onReevaluate) { Text("Re-evaluate", color = MaterialTheme.colorScheme.tertiary) }
                 Spacer(Modifier.width(8.dp))
                 Button(onClick = {
                     try {
@@ -79,15 +78,15 @@ fun ClarificationOverlay(task: Task, onFinish: (Float, Float, Float, Float, Floa
         Column(
             horizontalAlignment = Alignment.CenterHorizontally,
             modifier = Modifier
-                .background(AppColors.Surface, RoundedCornerShape(24.dp))
-                .border(1.dp, AppColors.Primary.copy(alpha = 0.5f), RoundedCornerShape(24.dp))
+                .background(MaterialTheme.colorScheme.surface, RoundedCornerShape(24.dp))
+                .border(1.dp, MaterialTheme.colorScheme.primary.copy(alpha = 0.5f), RoundedCornerShape(24.dp))
                 .padding(24.dp)
         ) {
-            Text("TEACHING THE AI...", color = AppColors.Primary, fontSize = 10.sp, fontWeight = FontWeight.Bold)
+            Text("TEACHING THE AI...", color = MaterialTheme.colorScheme.primary, fontSize = 10.sp, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(4.dp))
-            Text(task.rawText, color = AppColors.TextPrimary, fontSize = 14.sp, fontWeight = FontWeight.Bold)
+            Text(task.rawText, color = MaterialTheme.colorScheme.onSurface, fontSize = 14.sp, fontWeight = FontWeight.Bold)
             Spacer(Modifier.height(16.dp))
-            Text(questions[step], color = AppColors.TextPrimary, fontSize = 18.sp, fontWeight = FontWeight.Medium, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
+            Text(questions[step], color = MaterialTheme.colorScheme.onSurface, fontSize = 18.sp, fontWeight = FontWeight.Medium, textAlign = androidx.compose.ui.text.style.TextAlign.Center)
             Spacer(Modifier.height(24.dp))
             options.forEach { (label, value) ->
                 Button(
@@ -98,8 +97,8 @@ fun ClarificationOverlay(task: Task, onFinish: (Float, Float, Float, Float, Floa
                     modifier = Modifier.fillMaxWidth().padding(vertical = 4.dp),
                     shape = RoundedCornerShape(12.dp),
                     colors = ButtonDefaults.buttonColors(
-                        containerColor = AppColors.SurfaceVariant,
-                        contentColor = AppColors.Primary
+                        containerColor = MaterialTheme.colorScheme.surfaceVariant,
+                        contentColor = MaterialTheme.colorScheme.primary
                     )
                 ) {
                     Text(label)
