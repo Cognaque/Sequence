@@ -25,10 +25,11 @@ class LogicTest {
 
         // Age factor = 0
         // Dynamic proximity = 0.5
-        // Impact = 1.0 * 0.4 + 0.5 * 0.3 + 0.5 * 0.2 + 0.2 * 0.1
-        //        = 0.4 + 0.15 + 0.1 + 0.02
-        //        = 0.67
-        assertEquals(0.67f, task.calculateImpactScore(), 0.001f)
+        // New Weights: LT=0.4, Prox=0.3, Imm=0.2, Acc=0.1
+        // Impact = 0.5 * 0.4 + 0.5 * 0.3 + 1.0 * 0.2 + 0.2 * 0.1
+        //        = 0.20 + 0.15 + 0.20 + 0.02
+        //        = 0.57
+        assertEquals(0.57f, task.calculateImpactScore(), 0.001f)
     }
 
     @Test
@@ -47,10 +48,25 @@ class LogicTest {
 
         // Age factor = 10 * 0.05 = 0.5 (max is 0.5)
         // Dynamic proximity = min(0.5 + 0.5, 1.0) = 1.0
-        // Impact = 0.5 * 0.4 + 0.5 * 0.3 + 1.0 * 0.2 + 0.5 * 0.1
-        //        = 0.2 + 0.15 + 0.2 + 0.05
-        //        = 0.6
-        assertEquals(0.6f, task.calculateImpactScore(), 0.001f)
+        // Impact = 0.5 * 0.4 + 1.0 * 0.3 + 0.5 * 0.2 + 0.5 * 0.1
+        //        = 0.20 + 0.30 + 0.10 + 0.05
+        //        = 0.65
+        assertEquals(0.65f, task.calculateImpactScore(), 0.001f)
+    }
+
+    @Test
+    fun testTimeBlindnessLogic() {
+        // Task A: Immediate fire-fighting (Short term high, Long term low)
+        val fireFighting = Task(rawText = "A", immediate = 1.0f, longTerm = 0.2f, proximity = 0.8f, accumulation = 0.0f)
+        // Impact = 0.2*0.4 + 0.8*0.3 + 1.0*0.2 + 0.0 = 0.08 + 0.24 + 0.20 = 0.52
+
+        // Task B: Long term goal (Long term high, Immediate low)
+        val longTermGoal = Task(rawText = "B", immediate = 0.2f, longTerm = 1.0f, proximity = 0.5f, accumulation = 0.5f)
+        // Impact = 1.0*0.4 + 0.5*0.3 + 0.2*0.2 + 0.5*0.1 = 0.40 + 0.15 + 0.04 + 0.05 = 0.64
+
+        // The Long Term Goal should now outweigh the Fire Fighting
+        assertTrue("Long term goals should outweigh immediate noise",
+            longTermGoal.calculateImpactScore() > fireFighting.calculateImpactScore())
     }
 
     @Test
