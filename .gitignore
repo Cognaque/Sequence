@@ -1,0 +1,11 @@
+/build/
+/app/build/
+*.apk
+*.aab
+*.dex
+*.class
+*.log
+*.iml
+.idea/
+.gradle/
+
