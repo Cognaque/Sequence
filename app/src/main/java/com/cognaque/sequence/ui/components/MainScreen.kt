@@ -27,7 +27,9 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
 import androidx.compose.ui.input.pointer.pointerInput
+import androidx.compose.ui.layout.onSizeChanged
 import androidx.compose.ui.platform.LocalClipboardManager
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.platform.LocalHapticFeedback
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.text.AnnotatedString
@@ -96,16 +98,31 @@ fun MainScreen(viewModel: TaskViewModel) {
                         val isDragging = draggingItem?.id == task.id
                         val alpha by animateFloatAsState(if (isDragging) 0.5f else 1f, label = "alpha")
 
-                        val dismissState = rememberSwipeToDismissBoxState(
-                            confirmValueChange = {
-                                when (it) {
-                                    SwipeToDismissBoxValue.StartToEnd -> { viewModel.markDone(task); true }
-                                    SwipeToDismissBoxValue.EndToStart -> { showSubtaskInputFor = task; false }
-                                    else -> false
-                                }
-                            },
-                            positionalThreshold = { it * 0.5f }
-                        )
+                        var rowWidth by remember { mutableFloatStateOf(1000f) }
+                        val density = LocalDensity.current
+
+                        val dismissState = remember(density, task, viewModel) {
+                            var state: SwipeToDismissBoxState? = null
+                            state = SwipeToDismissBoxState(
+                                initialValue = SwipeToDismissBoxValue.Settled,
+                                density = density,
+                                confirmValueChange = { newValue ->
+                                    if (newValue == SwipeToDismissBoxValue.Settled) return@SwipeToDismissBoxState true
+                                    val currentOffset = try { state?.requireOffset() ?: 0f } catch (e: Exception) { 0f }
+                                    if (rowWidth > 0 && abs(currentOffset) < rowWidth * 0.5f) {
+                                        return@SwipeToDismissBoxState false
+                                    }
+
+                                    when (newValue) {
+                                        SwipeToDismissBoxValue.StartToEnd -> { viewModel.markDone(task); true }
+                                        SwipeToDismissBoxValue.EndToStart -> { showSubtaskInputFor = task; false }
+                                        else -> false
+                                    }
+                                },
+                                positionalThreshold = { it * 0.5f }
+                            )
+                            state!!
+                        }
 
                         var dragOffset by remember { mutableFloatStateOf(0f) }
 
@@ -114,7 +131,9 @@ fun MainScreen(viewModel: TaskViewModel) {
                             backgroundContent = { PrioritySwipeBackground(dismissState) },
                             enableDismissFromEndToStart = true,
                             enableDismissFromStartToEnd = true,
-                            modifier = Modifier.graphicsLayer { this.alpha = alpha }
+                            modifier = Modifier
+                                .graphicsLayer { this.alpha = alpha }
+                                .onSizeChanged { rowWidth = it.width.toFloat() }
                         ) {
                             val dragModifier = if (item.indentLevel > 0) {
                                 Modifier.pointerInput(Unit) {
