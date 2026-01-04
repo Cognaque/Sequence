@@ -103,7 +103,8 @@ fun MainScreen(viewModel: TaskViewModel) {
                                     SwipeToDismissBoxValue.EndToStart -> { showSubtaskInputFor = task; false }
                                     else -> false
                                 }
-                            }
+                            },
+                            positionalThreshold = { it * 0.75f }
                         )
 
                         var dragOffset by remember { mutableFloatStateOf(0f) }
