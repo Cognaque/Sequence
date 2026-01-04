@@ -2,6 +2,8 @@ package com.cognaque.sequence.ui.components
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
@@ -14,8 +16,9 @@ import androidx.compose.material3.*
 import androidx.compose.runtime.*
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
-import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.input.pointer.PointerEventPass
+import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
@@ -23,9 +26,6 @@ import androidx.compose.ui.unit.sp
 import com.cognaque.sequence.data.AppStrings
 import com.cognaque.sequence.data.EisenhowerQuadrant
 import com.cognaque.sequence.data.Task
-import com.cognaque.sequence.data.calculateImpactScore
-import com.cognaque.sequence.data.calculateMomentumScore
-import com.cognaque.sequence.data.getAgeInDays
 import com.cognaque.sequence.ui.TaskViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
@@ -64,8 +64,11 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
                 if (tasks.isEmpty()) item { Text("Empty", color = Color.Gray, fontSize = 12.sp) }
                 else {
                     items(tasks, key = { it.id }) { task ->
+                        var touchStartTime by remember { mutableLongStateOf(0L) }
+
                         val dismissState = rememberSwipeToDismissBoxState(
                             confirmValueChange = {
+                                if (System.currentTimeMillis() - touchStartTime < 500) return@rememberSwipeToDismissBoxState false
                                 when (it) {
                                     SwipeToDismissBoxValue.StartToEnd -> { viewModel.promoteTask(task); true }
                                     SwipeToDismissBoxValue.EndToStart -> { viewModel.deleteTask(task); true }
@@ -79,7 +82,13 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
                             state = dismissState,
                             backgroundContent = { VaultSwipeBackground(dismissState) },
                             enableDismissFromEndToStart = true,
-                            enableDismissFromStartToEnd = true
+                            enableDismissFromStartToEnd = true,
+                            modifier = Modifier.pointerInput(Unit) {
+                                awaitEachGesture {
+                                    awaitFirstDown(pass = PointerEventPass.Initial)
+                                    touchStartTime = System.currentTimeMillis()
+                                }
+                            }
                         ) {
                             VaultTaskRow(
                                 task = task,
@@ -125,47 +134,21 @@ fun VaultSheet(onDismiss: () -> Unit, viewModel: TaskViewModel, onTriggerReeval:
 
 @Composable
 fun VaultTaskRow(task: Task, onClick: () -> Unit) {
-    val impact = task.calculateImpactScore()
-    val gradient = when {
-        task.isDailyChore -> listOf(MaterialTheme.colorScheme.tertiary, MaterialTheme.colorScheme.tertiary)
-        task.isManuallyPromoted -> listOf(Color(0xFF424242), Color(0xFF616161))
-        task.calculateMomentumScore() >= 1.2f -> listOf(Color(0xFF7F0000), Color(0xFFB71C1C))
-        impact >= 0.85f -> listOf(Color(0xFFF57C00), Color(0xFFE65100))
-        impact >= 0.6f -> listOf(Color(0xFFFF9800), Color(0xFFFFB74D))
-        else -> listOf(MaterialTheme.colorScheme.primary, MaterialTheme.colorScheme.primary.copy(alpha = 0.7f))
-    }
-
-    Row(Modifier.fillMaxWidth(), verticalAlignment = Alignment.CenterVertically) {
-        Surface(color = Color.Transparent, shape = RoundedCornerShape(16.dp), modifier = Modifier.weight(1f)) {
-            Row(
-                Modifier
-                    .background(Brush.horizontalGradient(gradient))
-                    .clickable { onClick() }
-                    .padding(20.dp),
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                Column(modifier = Modifier.weight(1f)) {
-                    Text(
-                        task.rawText,
-                        fontWeight = FontWeight.Bold,
-                        color = Color.White
-                    )
-                    Row(verticalAlignment = Alignment.CenterVertically) {
-                        if (task.isDailyChore) {
-                            Text("Daily chore added by you", color = Color.Black.copy(alpha = 0.7f), fontSize = 10.sp, fontWeight = FontWeight.SemiBold)
-                        } else {
-                            val age = task.getAgeInDays()
-                            if (age > 0) {
-                                Text("• ${age}d Old", color = Color.White.copy(alpha = 0.9f), fontSize = 10.sp, fontWeight = FontWeight.Bold)
-                            }
-                            if (task.isManuallyPromoted) {
-                                if (age > 0) Spacer(Modifier.width(8.dp))
-                                Text("Added by you", color = Color.Black.copy(alpha = 0.7f), fontSize = 10.sp, fontWeight = FontWeight.Bold)
-                            }
-                        }
-                    }
-                }
-            }
+    Surface(
+        color = MaterialTheme.colorScheme.surface,
+        modifier = Modifier.fillMaxWidth().clickable { onClick() }
+    ) {
+        Row(
+            Modifier
+                .fillMaxWidth()
+                .padding(vertical = 12.dp, horizontal = 4.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Text(
+                text = task.rawText,
+                color = MaterialTheme.colorScheme.onSurface,
+                modifier = Modifier.weight(1f)
+            )
         }
     }
 }
