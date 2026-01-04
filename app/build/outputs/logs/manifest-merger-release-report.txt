@@ -1,0 +1,319 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:2:1-27:12
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:2:1-27:12
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/cognaque/.gradle/caches/8.13/transforms/5ca51a6056d8ec6ffcf6500cafd84016/transformed/material3-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/d8fcd1fb7157db31b1a6c284c20fed10/transformed/activity-compose-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/cognaque/.gradle/caches/8.13/transforms/c87a9528ab5ba0ce17c9ccc5abdf5535/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/cognaque/.gradle/caches/8.13/transforms/8d6e974ddc336651ce862069f22945df/transformed/savedstate-1.2.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/2d0bd7a16916df4f2e30f9b2820c3f3f/transformed/material-icons-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/ff9fbfc0664b9841ca936ab2abd0e2ed/transformed/material-icons-extended-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.material:material-ripple-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/eaf47a1c30570024deef698189590df4/transformed/material-ripple-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-core-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/092434b3ede322d1baab9e2c63e8708b/transformed/animation-core-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.animation:animation-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/ac9f0ad9a009ab8672fe5cd74612791f/transformed/animation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/b449ff6cdbee7f5761e752e4de0df964/transformed/foundation-layout-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.foundation:foundation-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/e49aabc2296a8f2139e280a1c619a923/transformed/foundation-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/a009aea784602bfe811c3d21d00ce3c6/transformed/ui-tooling-preview-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/163400f9a6b06c76c8be7954617af759/transformed/ui-unit-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/49017d31dc5b04e525a7a33205963bfa/transformed/ui-graphics-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/bbeabc2fdb5cab4d5718548767afc18d/transformed/ui-geometry-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-util-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/95685973b561d029c1e1e9894289ccf3/transformed/ui-util-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-text-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/aada4e96640c30d632c9dedae6f55868/transformed/ui-text-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:17:1-35:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/f36b57a99b58fb8993efa0119fd94f89/transformed/lifecycle-livedata-core-2.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/7c6f9f3f6c74b3d6a415588e1e2cc011/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/69cbb850be58221369dddb294e4e561a/transformed/lifecycle-runtime-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/69ced16a580efaa0b4b6b4f198b3c665/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/ad430720b199cb798c055ec20097bbf4/transformed/lifecycle-viewmodel-savedstate-2.8.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/b29ddd32acf29dbf6b928f9003686123/transformed/lifecycle-viewmodel-ktx-2.8.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/a080b1034ecfa9fb4cf1ca20ca3c5124/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.ui:ui-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/1359aaed9f9b9ffe203e3c4b85f56825/transformed/ui-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/2110670e14d14594ae0208f8073200df/transformed/activity-ktx-1.8.2/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.activity:activity:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/b03e7da04878c5a9c89bc5f11c233b79/transformed/activity-1.8.2/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.autofill:autofill:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/b927a3792357ab03bafd46bdf8a8d1a7/transformed/autofill-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:17:1-30:12
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/07ddf4b24a846f02c4c95f4e9c353d25/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:17:1-23:12
+MERGED from [androidx.core:core-ktx:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/4b9b1180dd8c6a600b53f274772fe74b/transformed/core-ktx-1.12.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:17:1-31:12
+MERGED from [androidx.room:room-ktx:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/3cbf774d7a88c2e22d23e939b5990e59/transformed/room-ktx-2.6.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/cognaque/.gradle/caches/8.13/transforms/6ed3c4730bdcb1a7818eb68849bc73fd/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/cognaque/.gradle/caches/8.13/transforms/f6521cc1d8e7422a8970d77f3e4fa8df/transformed/sqlite-2.4.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/1c7e3e0475308f46617977f5c6c9bf6b/transformed/runtime-saveable-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.compose.runtime:runtime-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/576cd01b686fffc10a902d66a740320a/transformed/runtime-release/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/cognaque/.gradle/caches/8.13/transforms/2080b991850db2e42d516ca3bd38425e/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:2:1-7:12
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/cognaque/.gradle/caches/8.13/transforms/147e68c403497c9768e7f2722c16a7de/transformed/core-runtime-2.2.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/840af84c6046c79470fa7d2622044754/transformed/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/fdf328c600be61ac020a080f606e3123/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:17:1-55:12
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:17:1-33:12
+MERGED from [androidx.tracing:tracing:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/92b4aa2eb65b05ba281db02261eb364d/transformed/tracing-1.0.0/AndroidManifest.xml:17:1-24:12
+	package
+		INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+	xmlns:tools
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:3:5-51
+	android:versionCode
+		INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:5:5-25:19
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:5:5-25:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:23:5-33:19
+MERGED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:28:5-89
+MERGED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:23:5-29:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/fdf328c600be61ac020a080f606e3123/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/fdf328c600be61ac020a080f606e3123/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:23:5-53:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:25:5-31:19
+	android:extractNativeLibs
+		INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:28:18-86
+	android:supportsRtl
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:12:9-35
+	android:label
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:10:9-41
+	android:fullBackupContent
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:8:9-54
+	android:roundIcon
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:11:9-54
+	android:icon
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:9:9-43
+	android:allowBackup
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:13:9-46
+	android:dataExtractionRules
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:7:9-65
+activity#com.cognaque.sequence.MainActivity
+ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:14:9-24:20
+	android:label
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:17:13-45
+	android:exported
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:16:13-36
+	android:theme
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:18:13-50
+	android:name
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:15:13-41
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:19:13-23:29
+action#android.intent.action.MAIN
+ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:20:17-69
+	android:name
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:20:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:22:17-77
+	android:name
+		ADDED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml:22:27-74
+uses-sdk
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/cognaque/.gradle/caches/8.13/transforms/5ca51a6056d8ec6ffcf6500cafd84016/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material3:material3-android:1.2.0] /home/cognaque/.gradle/caches/8.13/transforms/5ca51a6056d8ec6ffcf6500cafd84016/transformed/material3-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/d8fcd1fb7157db31b1a6c284c20fed10/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-compose:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/d8fcd1fb7157db31b1a6c284c20fed10/transformed/activity-compose-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/cognaque/.gradle/caches/8.13/transforms/c87a9528ab5ba0ce17c9ccc5abdf5535/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate-ktx:1.2.1] /home/cognaque/.gradle/caches/8.13/transforms/c87a9528ab5ba0ce17c9ccc5abdf5535/transformed/savedstate-ktx-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/cognaque/.gradle/caches/8.13/transforms/8d6e974ddc336651ce862069f22945df/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.2.1] /home/cognaque/.gradle/caches/8.13/transforms/8d6e974ddc336651ce862069f22945df/transformed/savedstate-1.2.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/2d0bd7a16916df4f2e30f9b2820c3f3f/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-core-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/2d0bd7a16916df4f2e30f9b2820c3f3f/transformed/material-icons-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/ff9fbfc0664b9841ca936ab2abd0e2ed/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-icons-extended-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/ff9fbfc0664b9841ca936ab2abd0e2ed/transformed/material-icons-extended-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/eaf47a1c30570024deef698189590df4/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.material:material-ripple-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/eaf47a1c30570024deef698189590df4/transformed/material-ripple-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/092434b3ede322d1baab9e2c63e8708b/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-core-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/092434b3ede322d1baab9e2c63e8708b/transformed/animation-core-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/ac9f0ad9a009ab8672fe5cd74612791f/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.animation:animation-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/ac9f0ad9a009ab8672fe5cd74612791f/transformed/animation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/b449ff6cdbee7f5761e752e4de0df964/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-layout-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/b449ff6cdbee7f5761e752e4de0df964/transformed/foundation-layout-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/e49aabc2296a8f2139e280a1c619a923/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.foundation:foundation-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/e49aabc2296a8f2139e280a1c619a923/transformed/foundation-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/a009aea784602bfe811c3d21d00ce3c6/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-tooling-preview-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/a009aea784602bfe811c3d21d00ce3c6/transformed/ui-tooling-preview-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/163400f9a6b06c76c8be7954617af759/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-unit-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/163400f9a6b06c76c8be7954617af759/transformed/ui-unit-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/49017d31dc5b04e525a7a33205963bfa/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-graphics-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/49017d31dc5b04e525a7a33205963bfa/transformed/ui-graphics-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/bbeabc2fdb5cab4d5718548767afc18d/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-geometry-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/bbeabc2fdb5cab4d5718548767afc18d/transformed/ui-geometry-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/95685973b561d029c1e1e9894289ccf3/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-util-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/95685973b561d029c1e1e9894289ccf3/transformed/ui-util-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/aada4e96640c30d632c9dedae6f55868/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-text-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/aada4e96640c30d632c9dedae6f55868/transformed/ui-text-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:21:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/f36b57a99b58fb8993efa0119fd94f89/transformed/lifecycle-livedata-core-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/f36b57a99b58fb8993efa0119fd94f89/transformed/lifecycle-livedata-core-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/7c6f9f3f6c74b3d6a415588e1e2cc011/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/7c6f9f3f6c74b3d6a415588e1e2cc011/transformed/lifecycle-runtime-ktx-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/69cbb850be58221369dddb294e4e561a/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-runtime-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/69cbb850be58221369dddb294e4e561a/transformed/lifecycle-runtime-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/69ced16a580efaa0b4b6b4f198b3c665/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/69ced16a580efaa0b4b6b4f198b3c665/transformed/lifecycle-viewmodel-release/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/ad430720b199cb798c055ec20097bbf4/transformed/lifecycle-viewmodel-savedstate-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/ad430720b199cb798c055ec20097bbf4/transformed/lifecycle-viewmodel-savedstate-2.8.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/b29ddd32acf29dbf6b928f9003686123/transformed/lifecycle-viewmodel-ktx-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/b29ddd32acf29dbf6b928f9003686123/transformed/lifecycle-viewmodel-ktx-2.8.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/a080b1034ecfa9fb4cf1ca20ca3c5124/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-compose-android:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/a080b1034ecfa9fb4cf1ca20ca3c5124/transformed/lifecycle-viewmodel-compose-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/1359aaed9f9b9ffe203e3c4b85f56825/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.ui:ui-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/1359aaed9f9b9ffe203e3c4b85f56825/transformed/ui-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/2110670e14d14594ae0208f8073200df/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity-ktx:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/2110670e14d14594ae0208f8073200df/transformed/activity-ktx-1.8.2/AndroidManifest.xml:5:5-44
+MERGED from [androidx.activity:activity:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/b03e7da04878c5a9c89bc5f11c233b79/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.activity:activity:1.8.2] /home/cognaque/.gradle/caches/8.13/transforms/b03e7da04878c5a9c89bc5f11c233b79/transformed/activity-1.8.2/AndroidManifest.xml:20:5-44
+MERGED from [androidx.autofill:autofill:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/b927a3792357ab03bafd46bdf8a8d1a7/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.autofill:autofill:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/b927a3792357ab03bafd46bdf8a8d1a7/transformed/autofill-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/07ddf4b24a846f02c4c95f4e9c353d25/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.customview:customview-poolingcontainer:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/07ddf4b24a846f02c4c95f4e9c353d25/transformed/customview-poolingcontainer-1.0.0/AndroidManifest.xml:20:5-21:38
+MERGED from [androidx.core:core-ktx:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/4b9b1180dd8c6a600b53f274772fe74b/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.core:core-ktx:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/4b9b1180dd8c6a600b53f274772fe74b/transformed/core-ktx-1.12.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/3cbf774d7a88c2e22d23e939b5990e59/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.room:room-ktx:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/3cbf774d7a88c2e22d23e939b5990e59/transformed/room-ktx-2.6.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/cognaque/.gradle/caches/8.13/transforms/6ed3c4730bdcb1a7818eb68849bc73fd/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite-framework:2.4.0] /home/cognaque/.gradle/caches/8.13/transforms/6ed3c4730bdcb1a7818eb68849bc73fd/transformed/sqlite-framework-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/cognaque/.gradle/caches/8.13/transforms/f6521cc1d8e7422a8970d77f3e4fa8df/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.sqlite:sqlite:2.4.0] /home/cognaque/.gradle/caches/8.13/transforms/f6521cc1d8e7422a8970d77f3e4fa8df/transformed/sqlite-2.4.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/1c7e3e0475308f46617977f5c6c9bf6b/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-saveable-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/1c7e3e0475308f46617977f5c6c9bf6b/transformed/runtime-saveable-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/576cd01b686fffc10a902d66a740320a/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.compose.runtime:runtime-android:1.6.8] /home/cognaque/.gradle/caches/8.13/transforms/576cd01b686fffc10a902d66a740320a/transformed/runtime-release/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/cognaque/.gradle/caches/8.13/transforms/2080b991850db2e42d516ca3bd38425e/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.annotation:annotation-experimental:1.4.0] /home/cognaque/.gradle/caches/8.13/transforms/2080b991850db2e42d516ca3bd38425e/transformed/annotation-experimental-1.4.0/AndroidManifest.xml:5:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/cognaque/.gradle/caches/8.13/transforms/147e68c403497c9768e7f2722c16a7de/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.arch.core:core-runtime:2.2.0] /home/cognaque/.gradle/caches/8.13/transforms/147e68c403497c9768e7f2722c16a7de/transformed/core-runtime-2.2.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/840af84c6046c79470fa7d2622044754/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/840af84c6046c79470fa7d2622044754/transformed/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/fdf328c600be61ac020a080f606e3123/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/fdf328c600be61ac020a080f606e3123/transformed/versionedparcelable-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:21:5-44
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:21:5-23:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/92b4aa2eb65b05ba281db02261eb364d/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.tracing:tracing:1.0.0] /home/cognaque/.gradle/caches/8.13/transforms/92b4aa2eb65b05ba281db02261eb364d/transformed/tracing-1.0.0/AndroidManifest.xml:20:5-22:41
+	android:targetSdkVersion
+		INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/cognaque/Music/Sequence/app/src/main/AndroidManifest.xml
+provider#androidx.startup.InitializationProvider
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:24:9-32:20
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+MERGED from [androidx.startup:startup-runtime:1.1.1] /home/cognaque/.gradle/caches/8.13/transforms/ad394a1ee605a5ef7afc5d9ab7a47653/transformed/startup-runtime-1.1.1/AndroidManifest.xml:26:9-30:34
+	tools:node
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:28:13-31
+	android:authorities
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:26:13-68
+	android:exported
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:27:13-37
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:25:13-67
+meta-data#androidx.emoji2.text.EmojiCompatInitializer
+ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.emoji2:emoji2:1.3.0] /home/cognaque/.gradle/caches/8.13/transforms/91be62cac09f6b63ef681d24100fc4d4/transformed/emoji2-1.3.0/AndroidManifest.xml:30:17-75
+meta-data#androidx.lifecycle.ProcessLifecycleInitializer
+ADDED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.lifecycle:lifecycle-process:2.8.0] /home/cognaque/.gradle/caches/8.13/transforms/4e5a558010d4e14efde286cbea5ba4e8/transformed/lifecycle-process-2.8.0/AndroidManifest.xml:30:17-78
+permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+permission#com.cognaque.sequence.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:22:5-24:47
+	android:protectionLevel
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:24:9-44
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:23:9-81
+uses-permission#${applicationId}.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+uses-permission#com.cognaque.sequence.DYNAMIC_RECEIVER_NOT_EXPORTED_PERMISSION
+ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:26:5-97
+	android:name
+		ADDED from [androidx.core:core:1.12.0] /home/cognaque/.gradle/caches/8.13/transforms/ea706daa62953e26458ffeba40a7316d/transformed/core-1.12.0/AndroidManifest.xml:26:22-94
+service#androidx.room.MultiInstanceInvalidationService
+ADDED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:24:9-28:63
+	android:exported
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:27:13-37
+	tools:ignore
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:28:13-60
+	android:directBootAware
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:26:13-43
+	android:name
+		ADDED from [androidx.room:room-runtime:2.6.1] /home/cognaque/.gradle/caches/8.13/transforms/dd179dd2f3e17718e91ea2a88f49b711/transformed/room-runtime-2.6.1/AndroidManifest.xml:25:13-74
+meta-data#androidx.profileinstaller.ProfileInstallerInitializer
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:29:13-31:52
+	android:value
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:31:17-49
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:30:17-85
+receiver#androidx.profileinstaller.ProfileInstallReceiver
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:34:9-52:20
+	android:enabled
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:37:13-35
+	android:exported
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:38:13-36
+	android:permission
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:39:13-57
+	android:directBootAware
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:36:13-44
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:35:13-76
+intent-filter#action:name:androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:40:13-42:29
+action#androidx.profileinstaller.action.INSTALL_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:17-91
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:41:25-88
+intent-filter#action:name:androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:43:13-45:29
+action#androidx.profileinstaller.action.SKIP_FILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:17-85
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:44:25-82
+intent-filter#action:name:androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:46:13-48:29
+action#androidx.profileinstaller.action.SAVE_PROFILE
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:17-88
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:47:25-85
+intent-filter#action:name:androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:49:13-51:29
+action#androidx.profileinstaller.action.BENCHMARK_OPERATION
+ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:17-95
+	android:name
+		ADDED from [androidx.profileinstaller:profileinstaller:1.3.1] /home/cognaque/.gradle/caches/8.13/transforms/94a2367159f86c77104b633b9e3b224e/transformed/profileinstaller-1.3.1/AndroidManifest.xml:50:25-92
