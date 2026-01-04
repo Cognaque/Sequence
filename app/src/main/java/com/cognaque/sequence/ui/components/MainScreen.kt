@@ -5,6 +5,8 @@ package com.cognaque.sequence.ui.components
 import androidx.compose.animation.core.animateFloatAsState
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
+import androidx.compose.foundation.gestures.awaitEachGesture
+import androidx.compose.foundation.gestures.awaitFirstDown
 import androidx.compose.foundation.gestures.detectDragGesturesAfterLongPress
 import androidx.compose.foundation.gestures.detectTapGestures
 import androidx.compose.foundation.layout.*
@@ -26,6 +28,7 @@ import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.hapticfeedback.HapticFeedbackType
+import androidx.compose.ui.input.pointer.PointerEventPass
 import androidx.compose.ui.input.pointer.pointerInput
 import androidx.compose.ui.platform.LocalClipboardManager
 import androidx.compose.ui.platform.LocalHapticFeedback
@@ -96,8 +99,11 @@ fun MainScreen(viewModel: TaskViewModel) {
                         val isDragging = draggingItem?.id == task.id
                         val alpha by animateFloatAsState(if (isDragging) 0.5f else 1f, label = "alpha")
 
+                        var touchStartTime by remember { mutableLongStateOf(0L) }
+
                         val dismissState = rememberSwipeToDismissBoxState(
                             confirmValueChange = {
+                                if (System.currentTimeMillis() - touchStartTime < 500) return@rememberSwipeToDismissBoxState false
                                 when (it) {
                                     SwipeToDismissBoxValue.StartToEnd -> { viewModel.markDone(task); true }
                                     SwipeToDismissBoxValue.EndToStart -> { showSubtaskInputFor = task; false }
@@ -114,7 +120,14 @@ fun MainScreen(viewModel: TaskViewModel) {
                             backgroundContent = { PrioritySwipeBackground(dismissState) },
                             enableDismissFromEndToStart = true,
                             enableDismissFromStartToEnd = true,
-                            modifier = Modifier.graphicsLayer { this.alpha = alpha }
+                            modifier = Modifier
+                                .graphicsLayer { this.alpha = alpha }
+                                .pointerInput(Unit) {
+                                    awaitEachGesture {
+                                        awaitFirstDown(pass = PointerEventPass.Initial)
+                                        touchStartTime = System.currentTimeMillis()
+                                    }
+                                }
                         ) {
                             val dragModifier = if (item.indentLevel > 0) {
                                 Modifier.pointerInput(Unit) {
